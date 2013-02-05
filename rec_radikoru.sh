@@ -2,7 +2,7 @@
 
 cd `dirname $0`
 
-while getopts l OPTION
+while getopts laho:t: OPTION
 do
   case $OPTION in
     l ) OPTION_l="TRUE" ;;
