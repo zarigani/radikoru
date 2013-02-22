@@ -2,12 +2,33 @@
 
 cd `dirname $0`
 
+# 使い方
+show_usage() {
+  echo "Usage: $COMMAND [-a] [-o output_path] [-t recording_seconds] station_ID"
+  echo '       -a  Output area info(ex. 'JP13,東京都,tokyo Japan'). No recording.'
+  echo '       -l  Output station list. No recording.'
+  echo '       -o  Default output_path = $HOME/Downloads/${station_name}_`date +%Y%m%d-%H%M`.flv'
+  echo '             a/b/c/ = $HOME/Downloads/a/b/c/J-WAVE_20130123-1700.flv'
+  echo '             a/b/c  = $HOME/Downloads/a/b/c.flv'
+  echo '            /a/b/c/ = /a/b/c/J-WAVE_20130123-1700.flv'
+  echo '            /a/b/c  = /a/b/c.flv'
+  echo '           ./a/b/c/ = ./a/b/c/J-WAVE_20130123-1700.flv'
+  echo '           ./a/b/c  = ./a/b/c.flv'
+  echo '       -t  Default recording_seconds = 30'
+  echo '           60 = 1 minute, 3600 = 1 hour, 0 = go on recording until stopped(control-C)'
+}
+
 while getopts laho:t: OPTION
 do
   case $OPTION in
     l ) OPTION_l="TRUE" ;;
+    h ) show_usage ; exit 1 ;;
   esac
 done
+
+if [ $# = 0 ]; then
+  show_usage ; exit 1
+fi
 
 if [ "$OPTION_l" = "TRUE" ]; then
   areaid=`/usr/local/bin/rec_radiko.sh -a|tail -1|cut -d, -f1`
