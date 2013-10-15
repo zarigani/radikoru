@@ -187,7 +187,7 @@ else
   radiko_authorize && radiko_record
 fi
 
-ffmpeg -v quiet -y -i "${output}" -acodec copy "${output%.*}.m4a"
+ffmpeg -v quiet -y -i "${output}" -acodec copy "${output%.*}.m4a" -ss 00:00:00.001
 rm -f "${output}"
 rm -f auth1_fms_$$
 rm -f auth2_fms_$$
