@@ -4,7 +4,7 @@
 
 # Install: wget swftools rtmpdump ffmpeg http://d.hatena.ne.jp/zariganitosh/20130120/radiko_recoding_again
 
-PATH=$PATH:/usr/local/bin
+PATH=/usr/local/bin:$PATH
 VERSION=3.0.0.01
 
 # 使い方

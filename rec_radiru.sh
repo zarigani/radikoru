@@ -4,7 +4,7 @@
 
 # Install: rtmpdump2.4 http://trick77.com/downloads/ 
 
-PATH=$PATH:/usr/local/bin
+PATH=/usr/local/bin:$PATH
 
 # 使い方
 show_usage() {
