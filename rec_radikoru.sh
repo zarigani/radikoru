@@ -4,7 +4,7 @@ cd `dirname $0`
 
 # 使い方
 show_usage() {
-  echo "Usage: $COMMAND [-a] [-o output_path] [-t recording_seconds] station_ID"
+  echo "Usage: $COMMAND [-al] [-o output_path] [-t recording_seconds] station_ID"
   echo '       -a  Output area info(ex. 'JP13,東京都,tokyo Japan'). No recording.'
   echo '       -l  Output station list. No recording.'
   echo '       -o  Default output_path = $HOME/Downloads/${station_name}_`date +%Y%m%d-%H%M`.flv'
