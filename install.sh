@@ -1,7 +1,8 @@
+COMMAND_PATH=$0
 INSTALL_DIRECTORY=${1:-/usr/local/bin}
 [ $# = 0 ] && mkdir -p /usr/local/bin
 
-cd `dirname $0`
+cd `dirname $COMMAND_PATH`
 cp -p rec_radiko.sh $INSTALL_DIRECTORY && echo install $INSTALL_DIRECTORY/rec_radiko.sh
 cp -p rec_radiru.sh $INSTALL_DIRECTORY && echo install $INSTALL_DIRECTORY/rec_radiru.sh
 cp -p rec_radikoru.sh $INSTALL_DIRECTORY && echo install $INSTALL_DIRECTORY/rec_radikoru.sh

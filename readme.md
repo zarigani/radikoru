@@ -6,7 +6,7 @@ radikoとradiruの録音スクリプト
 
 ダウンロード後、解凍して、install.shを実行する。
 
-	$ install.sh
+  $ ~/Downloads/radikoru-master/install.sh
 
 * インストール先は`/usr/local/bin/`
 
